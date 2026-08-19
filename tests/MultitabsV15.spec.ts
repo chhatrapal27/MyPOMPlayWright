@@ -9,5 +9,5 @@ const pagepromise = context.waitForEvent('page');
  console.log(await newpage.title());
  await page.bringToFront();
  console.log(await page.title());
- await page.waitForTimeout(9000);
+ await page.waitForTimeout(2000);
 })
