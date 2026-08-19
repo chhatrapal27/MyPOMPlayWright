@@ -1,0 +1,10 @@
+const company : string = "OpenAI";
+let employee : string = "Chhatra Pal";
+let experience : number = 5;
+let salary : number = 50000;
+let isAutomatinEngineer : boolean =true;
+console.log(company);
+console.log(employee);
+console.log(experience);
+console.log(salary);
+console.log("Automation Engineer:", isAutomatinEngineer);
