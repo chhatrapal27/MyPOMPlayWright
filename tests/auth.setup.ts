@@ -10,6 +10,7 @@ setup('authenticate' , async({page})=>
     await page.waitForTimeout(5000);
     await expect(page).toHaveTitle('Swag Labs');
 
-    await page.context().storageState({path : 'auth/user.json'}); // auth folder create hoga root pr
+    await page.context().storageState({
+        path : 'auth/user.json'}); // auth folder create hoga root pr
     // Ab project ki config file me jakr project setup krenge 
 })
