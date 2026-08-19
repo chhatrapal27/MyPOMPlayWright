@@ -7,7 +7,8 @@ setup('authenticate' , async({page})=>
     await page.locator('#user-name').fill('standard_user');
     await page.locator('#password').fill('secret_sauce');
     await page.locator('#login-button').click();
-    await page.waitForTimeout(5000);
+// Login complete hone ka actual wait
+    await page.waitForURL('**/inventory.html');
     await expect(page).toHaveTitle('Swag Labs');
 
     await page.context().storageState({
