@@ -7,10 +7,11 @@ await page.goto('https://www.testmuai.com/selenium-playground/checkbox-demo/');
 await page.waitForTimeout(2000);
 // all check box store in allcheckbox vaiable
 const allcheckbox = await page.locator("//input[@type='checkbox']");
-//use assertion -- use for expect particular value
-await expect(allcheckbox.first()).toBeChecked();
 // for check 
 await allcheckbox.first().check(); 
+//use assertion -- use for expect particular value
+await expect(allcheckbox.first()).toBeChecked();
+
 await page.waitForTimeout(2000);
 //isChecked 
 console.log("isChecked verify :" + await allcheckbox.first().isChecked());

@@ -4,5 +4,5 @@ import{test , expect} from '@playwright/test';
 test('Validate Page Tittle' , async({page})=>
 {
     await page.goto('https://demoblaze.com/index.html');
-    await expect(page).toHaveTitle('STOREt');
+    await expect(page).toHaveTitle('STORE');
 })

@@ -7,7 +7,7 @@ test('AsyncWaitDemo ', async({page})=>
 
     const usernamefield = await page.getByLabel('username');
     await expect(usernamefield).toBeVisible();
-    await expect(usernamefield).not.toBeEnabled();
+    await expect(usernamefield).toBeEnabled();
 
     const heading = await page.locator('h2');
     //await expect(heading).toHaveText('Test tlogin');
