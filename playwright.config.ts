@@ -39,8 +39,6 @@ export default defineConfig({
       name: 'setup', 
       //testMatch: /.*global\.setup\.ts/}, // v25 ka setup
         testMatch: '**/*.setup.ts'},
-
-    
     //Setup project - auth.setup.ts se aaya
     /*{ name: 'setup', 
       testMatch: /.*\.setup\.ts/ },*/
@@ -50,8 +48,8 @@ export default defineConfig({
       use: { 
         ...devices['Desktop Chrome'],
       // Use prepared auth state.
-       // storageState: 'auth/user.json' // privous stoageState
-        storageState: 'auth.user.json' // v25 video ke liye
+       storageState: 'auth/user.json' // privous stoageState
+      //storageState: 'auth.user.json' // v25 video ke liye
     },
         dependencies: ['setup']
     },
