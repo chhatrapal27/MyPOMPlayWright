@@ -1,5 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+//import dotenv from "dotenv"; // v32   // disbled for v33
 
+/*dotenv.config({ // disbled for v33
+  path: `./env/.env.${process.env.ENV}`,  // ${process.env.ENV} => $ dynamic hia
+  override: true // isse system ka name ni aayega - proper env username aayea - override true krne pr
+    }); // v32  // ``  ye backtick hai naki sigle quotes */
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -22,7 +27,10 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter:[
+            ['html'],
+            ['allure-playwright'] // v30 - vese  single tha html - default repot , buu hume allure report chaiye isliye array bnakar allure add kia
+            ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */

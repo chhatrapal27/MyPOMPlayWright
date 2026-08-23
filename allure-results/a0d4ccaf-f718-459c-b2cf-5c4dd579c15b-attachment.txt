@@ -1,0 +1,3 @@
+https://www.qa.example.com/   //v32 -dummy credentilas
+qausername
+qapassword

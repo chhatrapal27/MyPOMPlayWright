@@ -19,7 +19,9 @@ test('ValidateAddToCart' , async({page, loginpage , productListPage, cartpage}) 
  await loginpage.openInventoryPage();
  //expect(await page).toHaveURL('https://www.saucedemo.com/inventory.html'); // hardcoded - v22 ,v23
  await expect(page).toHaveURL(TEST_DATA.urls.inventory); // v24 dynamic
+ await productListPage.waitForPageLoad(); // v31  abstarct bn gya - kuki class inherit ki thi
  await productListPage.clickAddtoCartbutton();
+ await productListPage.header.openandcloseHamburger(); //v29
  await expect (productListPage.cartBadgeIcon).toHaveText('1');
  await productListPage.clickCartIcon();
  //expect(await page).toHaveURL('https://www.saucedemo.com/cart.html'); // hardcoded - v22 ,v23
@@ -42,5 +44,6 @@ test('ValidateCartItem' , async({page, loginpage , productListPage, cartpage}) =
  await expect(page).toHaveURL(TEST_DATA.urls.cart)// v24 dynamic
 
  await expect(cartpage.cartProduct).toHaveText('Sauce Labs Backpack')
+ await cartpage.header.openandcloseHamburger(); // v29
  await page.waitForTimeout(5000);
 })
